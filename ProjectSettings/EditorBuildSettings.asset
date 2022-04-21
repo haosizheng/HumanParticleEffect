@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/HumanParticleEffect/Sample/Sample.unity
-    guid: 1c09b1927decd4d0abd8268691e4296e
-  - enabled: 0
+  - enabled: 1
+    path: Assets/RootScene/RootScene.unity
+    guid: 33bf2a62b98d84cf09e08a3b6da3a451
+  - enabled: 1
     path: Assets/HumanParticleEffect/HumanParticle.unity
     guid: 58816ebf1249d4834a392cd81b6d153c
   - enabled: 1

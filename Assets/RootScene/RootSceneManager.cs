@@ -8,12 +8,12 @@ public class RootSceneManager : MonoBehaviour
     {
         
     }
-public void LoadSceneWithName(string SceneName)
+    public void LoadSceneWithName(string SceneName)
     {
-        SceneManager.LoadScene("OtherSceneName", LoadSceneMode.Single);
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
     }
 
-    public void BackTORootScene()
+    public void BackToRootScene()
     {
         var rootname = "RootScene";
         LoadSceneWithName(rootname);
