@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Sample/Sample.unity
     guid: 1c09b1927decd4d0abd8268691e4296e
   - enabled: 1
-    path: Assets/HumanParticle/HumanParticle.unity
+    path: Assets/HumanParticleEffect/HumanParticle.unity
     guid: 58816ebf1249d4834a392cd81b6d153c
   - enabled: 0
-    path: Assets/HumanParticle/HumanParticle_Sample.unity
+    path: Assets/HumanParticleEffect/HumanParticle_Sample.unity
     guid: 558561137f4584229965509a53f2c415
   m_configObjects:
     AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 63d52eb617b4541c1b4e784ed67fc75f,
