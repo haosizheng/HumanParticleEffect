@@ -47,6 +47,9 @@ public class HumanParticle : MonoBehaviour
     private readonly int PropertyID_PositionMap = Shader.PropertyToID("PositionMap");
     private readonly int PropertyID_ColorMap = Shader.PropertyToID("ColorMap");
 
+    // debugs
+    [SerializeField]bool debug = false;
+
     void Start()
     {
         _camera = GetComponent<Camera>();
@@ -58,9 +61,16 @@ public class HumanParticle : MonoBehaviour
         _lastDeviceOrientation = DeviceOrientation.Portrait;
         _computeShader.SetInt(PropertyID_IsWide, 0);
     }
+    public void debugMode()
+    {
+            string str1 = _visualEffect.GetTexture(PropertyID_PositionMap).name;
+            string str2 = _visualEffect.GetTexture(PropertyID_ColorMap).name;
+        Debug.Log(str1 + "&&" + str2);
+    }
     
     void Update()
     {
+
         var humanDepthTexture = _arOcclusionManager.humanDepthTexture;
         if (humanDepthTexture)
         {

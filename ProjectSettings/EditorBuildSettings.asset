@@ -11,6 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HumanParticle/HumanParticle.unity
     guid: 58816ebf1249d4834a392cd81b6d153c
+  - enabled: 0
+    path: Assets/HumanParticle/HumanParticle_Sample.unity
+    guid: 558561137f4584229965509a53f2c415
   m_configObjects:
+    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 63d52eb617b4541c1b4e784ed67fc75f,
+      type: 2}
+    AR Foundation RemoteARFoundationRemoteSessionRecordsData: {fileID: 11400000, guid: 6fa19566aef9d4063adfa92b20189ad3,
+      type: 2}
+    UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 85cedf1bfb1b941639e3e1553157fb72,
+      type: 2}
+    UnityEditor.XR.HoloKit.HoloKitPackageSettings: {fileID: 11400000, guid: e9e03a11abf2746388dc5566c9d18516,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 49c98a94bcfc34855a11ef17db57a092,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4f1fc6081ec2f4b5cb745c4ed4f6da91,
       type: 2}

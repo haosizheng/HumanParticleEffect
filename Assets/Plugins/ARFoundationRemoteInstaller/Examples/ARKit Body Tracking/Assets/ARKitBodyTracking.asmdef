@@ -1,0 +1,27 @@
+{
+    "name": "ARKitBodyTracking",
+    "references": [
+        "GUID:a9420e37d7990b54abdef6688edbe313",
+        "GUID:92703082f92b41ba80f0d6912de66115"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.modules.animation",
+            "expression": "1.0.0",
+            "define": "ANIMATION_MODULE_INTALLED"
+        },
+        {
+            "name": "com.unity.xr.arsubsystems",
+            "expression": "4.0.1",
+            "define": "AR_SUBSYSTEMS_4_0_1_OR_NEWER"
+        }
+    ],
+    "noEngineReferences": false
+}
