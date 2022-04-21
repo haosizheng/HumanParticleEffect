@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class AfterImage
 {
@@ -26,11 +26,13 @@ public class AfterImage
     public void Draw(Texture cameraFeed)
     {
         _material.mainTexture = cameraFeed;
+        // Draw after-image the size of which is corresponding to screen
         Graphics.DrawTexture(new Rect(0, 0, _camera.pixelWidth, _camera.pixelHeight), cameraFeed, _material);
     }
 
     public void SetMaterialProperty(Texture humanStencilTexture)
     {
+        // Those property are to adjust UV of HumanStencilTexture in any orientation and resolution
         if (Input.deviceOrientation == DeviceOrientation.LandscapeRight)
         {
             _material.SetFloat(PropertyID_UVMultiplierLandScape, CalculateUVMultiplierLandScape(humanStencilTexture));
@@ -49,20 +51,21 @@ public class AfterImage
             _material.SetInt(PropertyID_OnWide, 0);
         }
 
+        // Set HumanStencilTexture to material
         _material.SetTexture(PropertyID_StencilTex, humanStencilTexture);
     }
 
     private float CalculateUVMultiplierLandScape(Texture textureFromAROcclusionManager)
     {
-        float screenAspect = (float)Screen.width / Screen.height;
-        float cameraTextureAspect = (float)textureFromAROcclusionManager.width / textureFromAROcclusionManager.height;
+        float screenAspect = (float) Screen.width / Screen.height;
+        float cameraTextureAspect = (float) textureFromAROcclusionManager.width / textureFromAROcclusionManager.height;
         return screenAspect / cameraTextureAspect;
     }
 
     private float CalculateUVMultiplierPortrait(Texture textureFromAROcclusionManager)
     {
-        float screenAspect = (float)Screen.height / Screen.width;
-        float cameraTextureAspect = (float)textureFromAROcclusionManager.width / textureFromAROcclusionManager.height;
+        float screenAspect = (float) Screen.height / Screen.width;
+        float cameraTextureAspect = (float) textureFromAROcclusionManager.width / textureFromAROcclusionManager.height;
         return screenAspect / cameraTextureAspect;
     }
 }

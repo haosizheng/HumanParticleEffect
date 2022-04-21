@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0835e0ba43cb0414aa427f1e5fb9fc1f, type: 3}
   m_Name: Holo Kit Package Settings
   m_EditorClassIdentifier: 
-  m_Requirement: 0
+  m_Requirement: 1

@@ -1,4 +1,4 @@
-Shader "HumanSegmentation/AfterImage"
+﻿Shader "HumanSegmentation/AfterImage"
 {
     SubShader
     {
@@ -19,12 +19,12 @@ Shader "HumanSegmentation/AfterImage"
 
             struct v2f
             {
-                float2 uv : TEXCOORD0;
-                float2 uv1 : TEXCOORD1;
-                float2 uv2 : TEXCOORD2;
+                float2 uv : TEXCOORD0;   // for size of Screen
+                float2 uv1 : TEXCOORD1;  // for size of CameraFeed provided ARFoundation SDK（not used this time） 
+                float2 uv2 : TEXCOORD2;  // for size of HumanSegmentationTextures (stencil and depth) provided ARFoundation SDK
                 float4 vertex : SV_POSITION;
             };
-
+            
             sampler2D _MainTex;
             sampler2D _StencilTex;
             float _UVMultiplierLandScape;
@@ -32,12 +32,13 @@ Shader "HumanSegmentation/AfterImage"
             float _UVFlip;
             int _OnWide;
 
-            v2f vert(appdata v)
+            v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = v.uv;
-                if (_OnWide == 1)
+                // Adjust UV
+                if(_OnWide == 1)
                 {
                     o.uv1 = float2(v.uv.x, (1.0 - (_UVMultiplierLandScape * 0.5f)) + (v.uv.y / _UVMultiplierLandScape));
                     o.uv2 = float2(lerp(1.0 - o.uv1.x, o.uv1.x, _UVFlip), lerp(o.uv1.y, 1.0 - o.uv1.y, _UVFlip));
@@ -50,11 +51,12 @@ Shader "HumanSegmentation/AfterImage"
                 }
                 return o;
             }
-
-            fixed4 frag(v2f i) : SV_Target
+            
+            fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
                 float stencilCol = tex2D(_StencilTex, i.uv2);
+                // Don't render pixels where no human part is
                 if (stencilCol < 1) {
                     discard;
                 }
